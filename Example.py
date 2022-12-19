@@ -18,3 +18,22 @@ print("Sample width", obj.getsampwidth())
 print("Frame rate", obj.getframerate())
 print("Number of frames", obj.getnframes())
 print("Parameters", obj.getparams())
+
+time_audio = obj.getnframes() / obj.getframerate()
+print(time_audio)
+
+frames = obj.readframes(-1)
+print(type(frames), type(frames[0]))
+print(len(frames) / 2)
+
+obj.close()
+
+obj_new = wave.open("sample_new.wave", "wb")
+
+obj_new.setnchannels(1)
+obj_new.setsampwidth(2)
+obj_new.setframerate(16000)
+
+obj_new.writeframes(frames)
+
+obj_new.close()
