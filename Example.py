@@ -28,7 +28,7 @@ print(len(frames) / 2)
 
 obj.close()
 
-obj_new = wave.open("sample_new.wave", "wb")
+obj_new = wave.open("sample_new.wav", "wb")
 
 obj_new.setnchannels(1)
 obj_new.setsampwidth(2)
